@@ -1,0 +1,62 @@
+<br />
+<div class="center"><u>Add Contract</u></div><br />
+
+<div class="center">
+  <form #contractForm="ngForm" (ngSubmit)="addContract(contractForm)">
+    <label>Hotel ID&nbsp;:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="hotelId" [(ngModel)]="hotelId" required>
+    <br /><br />
+    <label>Hotel Name&nbsp;:</label>&nbsp;
+    <input type="text" name="hotelName" [(ngModel)]="hotelName" required>
+    <br /><br />
+    <label>Starting Date of Contract&nbsp;:</label>&nbsp;
+    <input type="date" name="fromDate" [(ngModel)]="fromDate" required> 
+    <br /><br />
+
+    <label>Ending Date of Contract&nbsp;:</label>&nbsp;
+    <input type="date" name="toDate" [(ngModel)]="toDate" required> 
+    <br /><br />
+
+    <label>Mark Up Percentage&nbsp;:</label>&nbsp;
+    <input type="number" name="markUp" [(ngModel)]="markUp" required> 
+    <br /><br />
+
+    <div>
+      <label><b>Room Types</b>&nbsp;:</label><br /><br />
+      <div *ngFor="let roomType of roomTypes; let i = index" [ngClass]="{ 'last-room-type': i === roomTypes.length - 1 }">
+        <div>
+          <label for="roomTypeName{{ i }}">Name&nbsp;:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="roomTypeName{{ i }}" name="roomTypeName{{ i }}" [(ngModel)]="roomTypes[i].roomTypeName" required>
+        </div>
+        <br />
+        <div>
+          <label for="roomTypePrice{{ i }}">Price&nbsp;:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="number" id="roomTypePrice{{ i }}" name="roomTypePrice{{ i }}" [(ngModel)]="roomTypes[i].price" required>
+        </div>
+        <br />
+        <div>
+          <label for="noOfRooms{{ i }}">Number of Rooms&nbsp;:</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="number" id="noOfRooms{{ i }}" name="noOfRooms{{ i }}" [(ngModel)]="roomTypes[i].noOfRooms" required>
+        </div>
+        <br />
+        <div>
+          <label for="maxAdults{{ i }}">Maximum Number of Adults&nbsp;:</label>&nbsp;&nbsp;&nbsp;
+          <input type="number" id="maxAdults{{ i }}" name="maxAdults{{ i }}" [(ngModel)]="roomTypes[i].maxAdults" required>
+        </div>
+
+        <br />
+      </div> <br />
+      <button type="button" (click)="addRoomType1()" value="Add RoomType">Add Room Type</button>
+    
+    </div>
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <input type="submit" value="Add Contract">
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<!-- Add RoomType Form -->
+<div class="center"><u>Add RoomType</u></div>
+<div>
+  <!-- Form to add a new RoomType -->
+  <form #roomTypeForm="ngForm" (ngSubmit)="addRoomType(roomTypeForm)">
+    <!-- Input field for RoomType name -->
+    <label>Room type Name:</label>
+    <input type="text" name="roomTypeName" [(ngModel)]="roomTypeName" required>
+    <br />
+    <!-- Input field for price per night -->
+    <label>Price per night:</label>
+    <input type="number" name="price" [(ngModel)]="price" required>
+    <br />
+    <!-- Input field for number of rooms -->
+    <label>Number of Rooms:</label>
+    <input type="number" name="noOfRooms" [(ngModel)]="noOfRooms" required>
+    <br />
+    <!-- Input field for maximum number of adults -->
+    <label>Maximum number of Adults:</label>
+    <input type="text" name="maxAdults" [(ngModel)]="maxAdults" required>
+    <br />
+    <!-- Submit button to add a new RoomType -->
+    <input type="submit" value="Add RoomType">
+  </form>
+</div>

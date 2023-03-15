@@ -1,0 +1,54 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 30%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #cbcbcb;
+    color: #333;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Optional: add some styles for the caption */
+  caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  hr {
+    border: none; /* Remove default line */
+    height: 2px; /* Set the thickness of the line */
+    background-color: black; /* Set the color of the line */
+    margin: 10px 0; /* Add some space around the line */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4); /* Add a shadow effect */
+  }
+
+  .error-message{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

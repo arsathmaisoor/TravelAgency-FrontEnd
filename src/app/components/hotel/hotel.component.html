@@ -1,0 +1,28 @@
+
+
+<div class="center">
+    <h3><u><b>Hotels</b></u></h3>
+</div>
+
+<br />
+
+<div class="center">
+    <table>
+        <caption>Available Hotels with their Hotel IDs</caption>
+        <tr>
+            <th>Hotel Name</th>
+            <th>Hotel ID</th>
+        </tr>
+        <tr *ngFor="let hotel of hotels">
+            <td>
+                <div>{{hotel.hotelName}}</div>
+            </td>
+            <td>
+                <div>{{hotel.hotelId}}</div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br />
+

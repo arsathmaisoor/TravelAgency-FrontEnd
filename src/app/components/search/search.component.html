@@ -1,0 +1,46 @@
+<!-- Search form for room type -->
+<br />
+<div class="center"><b><u>Search for Room Type</u></b></div>
+<br />
+<div class="center">
+  <div class="search-container">
+    <!-- Form to search for room type based on check-in, check-out dates, number of rooms, and number of adults -->
+    <form #searchForm="ngForm" (ngSubmit)="searchContracts()">
+      <div class="form-group">
+        <label for="checkinDate">Check-in Date:</label>
+        <input type="date" class="form-control" id="checkinDate" name="checkinDate" [(ngModel)]="checkinDate" required>
+      </div>
+      <div class="form-group">
+        <label for="checkoutDate">Check-out Date:</label>
+        <input type="date" class="form-control" id="checkoutDate" name="checkoutDate" [(ngModel)]="checkoutDate" required>
+      </div>
+      <div class="form-group">
+        <label for="numRooms">Number of Rooms:</label>
+        <input type="number" class="form-control" id="numRooms" name="numRooms" [(ngModel)]="numRooms" required>
+      </div>
+      <div class="form-group">
+        <label for="numAdults">Number of Adults:</label>
+        <input type="number" class="form-control" id="numAdults" name="numAdults" [(ngModel)]="numAdults" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <br /> <br />
+    <!-- Show "Unavailable" message if no contracts available -->
+    <div *ngIf="contracts.length === 0">
+      Unavailable
+    </div>
+    <!-- Show the list of contracts with room types that match the search criteria -->
+    <div *ngFor="let contract of contracts">
+      <h3>{{ contract.hotelName }}</h3>
+      <p>From: {{ contract.fromDate | date }}</p>
+      <p>To: {{ contract.toDate | date }}</p>
+      <ul>
+        <li *ngFor="let roomType of contract.roomTypes">
+          {{ roomType.roomTypeName }} - {{ roomType.noOfRooms }} rooms &nbsp; --- &nbsp; Price : {{roomType.price*(1+(contract.markUp/100))}} Rupees
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>    

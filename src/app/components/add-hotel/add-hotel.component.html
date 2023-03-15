@@ -1,0 +1,32 @@
+<!-- Add Hotel form header -->
+<br /><br /><br />
+<div class="center"><u>Add Hotel</u></div>
+<br /><br />
+
+<!-- Add Hotel form -->
+<div class="center">
+  <form #hotelForm="ngForm" (ngSubmit)="addHotel(hotelForm)">
+  
+    <!-- Hotel name input field -->
+    <label>Hotel Name:</label>
+    &nbsp;
+    <input type="text" name="hotelName" [(ngModel)]="hotelName" required>
+    
+    <!-- Error message for invalid Hotel name input field -->
+    <div *ngIf="hotelForm.controls['hotelName'].invalid && (hotelForm.controls['hotelName'].dirty || hotelForm.controls['hotelName'].touched)">
+      <div class="error-message">*Hotel name is required</div>
+    </div>
+    
+    <br /><br />
+    <div class="center">
+  
+      <!-- Add Hotel button -->
+      <input type="submit" value="Add Hotel" [disabled]="hotelForm.controls['hotelName'].pristine || !hotelForm.controls['hotelName'].value">
+      &nbsp; &nbsp; &nbsp; &nbsp;
+      
+      <!-- Error message for empty Hotel name input field -->
+      <div *ngIf="hotelForm.controls['hotelName'].pristine && !hotelForm.controls['hotelName'].value" class="error-message">*Please Enter a Hotel Name</div>
+
+    </div>
+  </form>
+</div>

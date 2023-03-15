@@ -1,0 +1,39 @@
+<div class="center">
+  <h1><u>SUN TRAVEL AGENCY</u></h1>
+</div>
+<!-- Navbar -->
+<div class="navbar">
+  <!-- Button to navigate to the Hotels page -->
+  <div>
+    <button (click)="goToHotelPage()">Hotels Available</button>
+  </div>
+  <br />
+  <!-- Button to navigate to the Add Hotel page -->
+  <div>
+    <button (click)="goToAddHotelPage()">Add Hotel</button>
+  </div>
+  <br />
+  <!-- Button to navigate to the Contracts page -->
+  <div>
+    <button (click)="goToContractPage()">Contracts Available</button>
+  </div>
+  <br />
+  <!-- Button to navigate to the Add Contract page -->
+  <div>
+    <button (click)="goToAddContractPage()">Add Contract</button>
+  </div>
+  <br />
+  <!-- Button to navigate to the Room Types page -->
+  <div>
+    <button (click)="goToRoomTypePage()">View Room Types</button>
+  </div>
+  <br />
+  <!-- Button to navigate to the Search page -->
+  <div>
+    <button (click)="goToSearchPage()">Search</button>
+  </div>
+  <br />
+</div>
+<!-- Renders the appropriate component based on the button clicked -->
+
+<router-outlet></router-outlet>

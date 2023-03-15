@@ -1,0 +1,12 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.error-message{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

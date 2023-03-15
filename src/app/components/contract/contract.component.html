@@ -1,0 +1,40 @@
+<!-- This component displays available contracts with their details and a delete button for each contract -->
+
+<br /><br /><br />
+<div class="center">
+  <u><b>Available Contracts for now</b></u>
+</div>
+<div class="center">
+  <ul>
+    <!-- Displaying contracts using ngFor directive -->
+    <div *ngFor="let contract of contracts">
+      <li>
+        <div>
+          <!-- Displaying hotel name and contract ID for each contract -->
+          {{contract.hotelName}} &nbsp;&nbsp;&nbsp; (Contract ID : {{contract.contractId}})      
+          <br /><br />
+          <div *ngFor="let roomType of contract['roomTypes']">
+            <!-- Displaying room type details for each contract -->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>{{ roomType.roomTypeName }}</b> 
+            &nbsp;&nbsp;---&nbsp;&nbsp;
+            From {{contract.fromDate}} 
+            &nbsp;&nbsp;---&nbsp;&nbsp;
+            <b>To {{contract.toDate}}</b> 
+            &nbsp;&nbsp;---&nbsp;&nbsp; 
+            {{roomType.price}} Rupees per night 
+            &nbsp;&nbsp;---&nbsp;&nbsp; 
+            <b>Enough for {{roomType.maxAdults}} Adults</b> 
+            &nbsp;&nbsp;---&nbsp;&nbsp; 
+            {{roomType.noOfRooms}} Rooms are available <br />
+          </div>
+        </div>  
+        <!-- Delete button for each contract
+        <button (click)="deleteContract(contract.contractId)">Delete</button> -->
+      </li>
+      <br /><br /><br />
+    </div>
+  </ul>
+  <br /><br />
+</div>
+    

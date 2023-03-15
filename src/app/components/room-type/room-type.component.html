@@ -1,0 +1,21 @@
+<!-- A div to display a centered section -->
+<div class="center">
+  <!-- Three line breaks for spacing -->
+  <br /><br /><br />
+  <!-- A bold and underlined heading -->
+  <u><b>Available Room Types for now</b></u>
+</div>
+<!-- Another centered div for the list of room types -->
+<div class="center">
+  <!-- An unordered list to display the room types -->
+  <ul>
+    <!-- A loop to iterate through the list of room types -->
+    <div *ngFor="let roomType of roomTypes">
+      <!-- A list item to display each room type -->
+      <li>
+        <!-- Display the room type name and ID -->
+        <div>{{roomType.roomTypeName}}&nbsp;&nbsp;&nbsp;(Room Type ID : {{roomType.roomTypeId}})</div>
+      </li>
+    </div>
+  </ul>
+</div>
